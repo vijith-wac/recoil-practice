@@ -1,10 +1,12 @@
 import { atom, selector } from "recoil";
+import { localStorageEffect } from "./localStorageEffects";
 
 
 //atom
 export const counterState = atom({
     key:'counterState', // unique ID (with respect to other atoms/selectors)
-    default:0 
+    default:0,
+    effects_UNSTABLE :[localStorageEffect('counterState')] 
 })
 
 //selector
